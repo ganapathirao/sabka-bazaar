@@ -15,14 +15,25 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   @Input() images: any;
   public activeSlide = 0;
   public slidesList : any;
-  
+  public autoSlideChange: any;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
+    this.slideChange();
     this.slidesList = document.getElementsByClassName('carousel-slide');
+  }
+
+  // Function to change slide after 5s
+  slideChange(): void {
+    if(this.autoSlideChange) {
+      clearInterval(this.autoSlideChange);
+    }
+    this.autoSlideChange = setInterval(() => {
+      this.next();
+    },3000)
   }
 
   // Function to show previous silde
@@ -33,6 +44,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     } else {
       this.activeSlide = this.images.length-1;
     }
+    this.slideChange();
     this.slidesList[this.activeSlide].classList.add('active');
   }
 
@@ -44,6 +56,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     } else {
       this.activeSlide = 0;
     }
+    this.slideChange();
     this.slidesList[this.activeSlide].classList.add('active');
   }
 
@@ -52,6 +65,7 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     this.slidesList[this.activeSlide].classList.remove('active');
     this.activeSlide = index;
     this.slidesList[this.activeSlide].classList.add('active');
+    this.slideChange();
   }
 
 }

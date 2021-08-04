@@ -9,20 +9,20 @@
         <div class="header-links d-flex flex-grow-1 d-xs-none">
             <ul class="list-unstyled">
                 <li class="list-inline-item mr-16">
-                    <a routerLink="/home" class="text-capitalize title-color f-18">home</a>
+                    <a routerLink="/home" routerLinkActive="active" class="text-capitalize bold-text title-color f-18">home</a>
                 </li>
                 <li class="list-inline-item">
-                    <a routerLink="/products" class="text-capitalize title-color title-color f-18">products</a>
+                    <a routerLink="/products" routerLinkActive="active" class="text-capitalize bold-text title-color title-color f-18">products</a>
                 </li>
             </ul>
         </div>
         <div class="cart-section d-flex flex-column">
             <ul class="list-unstyled text-right d-xs-none mb-15">
                 <li class="list-inline-item mr-10">
-                    <a routerLink="/login" class="text-capitalize f-14 text-color bold-text">SignIn</a>
+                    <a routerLink="/login" routerLinkActive="active" class="text-capitalize f-14 text-color bold-text">SignIn</a>
                 </li>
                 <li class="list-inline-item">
-                    <a routerLink="/register" class="text-capitalize f-14 text-color bold-text">register</a>
+                    <a routerLink="/register" routerLinkActive="active" class="text-capitalize f-14 text-color bold-text">register</a>
                 </li>
             </ul>
             <div class="flex-grow-1 d-flex justify-content-center f-16 align-items-center cart-items bold-text c-pointer" (click)="showCart = true">

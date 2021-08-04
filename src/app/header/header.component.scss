@@ -10,9 +10,12 @@ header {
         }
     }
     .header-links {
-            margin-left: 10rem;
-            align-items: flex-end;
-            margin-bottom: 2rem;
+        margin-left: 10rem;
+        align-items: flex-end;
+        margin-bottom: 2rem;
+    }
+    .active {
+        color: #000;
     }
     .cart-section {
         flex-basis: 130px;
