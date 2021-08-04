@@ -1,0 +1,79 @@
+@import './variables';
+// custom classes for reusability
+.bold-text {
+    font-family: 'poppins-medium';
+}
+.d-flex {
+    display: flex;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
+.flex-column {
+    flex-direction: column;
+}
+.mx-auto {
+    margin: 0 auto;
+}
+.align-items-center {
+    align-items: center;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.flex-grow-1 {
+    flex-grow: 1;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.title-color {
+    color: $heading-color;
+}
+.text-color {
+    color: $text-color;
+}
+.text-white {
+    color: #fff;
+}
+.pr-0 {
+    padding-right: 0 !important;
+}
+.m-0 {
+    margin: 0;
+}
+.text-danger {
+    color: red;
+}
+.d-none {
+    display: none;
+}
+.h-100 {
+    height: 100%;
+}
+.c-pointer {
+    cursor: pointer;
+}
+.w-auto {
+    width: auto !important;
+}
+.error-text {
+    position: absolute;
+    margin: 0;
+    bottom: 3px;
+}
+.position-relative {
+    position: relative;
+}
+.position-absolute {
+    position: absolute;
+}
+.bg-transparent {
+    background-color: transparent;
+}
+.border-0 {
+    border: none;
+}

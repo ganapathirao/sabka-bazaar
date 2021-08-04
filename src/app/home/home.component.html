@@ -1,0 +1,53 @@
+<!-- home template starts -->
+<section class="home-container mt-40 mb-30">
+    <div class="products-list custom-container mx-auto">
+        <!-- loading carousel template dynamically -->
+        <app-carousel [images]="imagesList"></app-carousel>
+
+        <div class="product-item img-first d-flex">
+            <img src="../../assets/images/home/fruits.png" class="product-img" alt="fruits" />
+            <div class="d-flex align-items-center flex-column justify-content-center flex-grow-1">
+                <h2 class="f-16 m-0">Fruits & Vegetables</h2>
+                <p class="f-14 mt-10 mb-20 text-center bold-text">A variety of fresh fruits and vegetables.</p>
+                <a routerLink="/products" class="custom-btn f-14 w-auto pt-10 pb-10 pl-10 pr-10">Explore fruit-and-veg</a>
+            </div>
+        </div>
+
+        <div class="product-item img-first d-flex">
+            <div class="d-flex align-items-center flex-column justify-content-center flex-grow-1">
+                <h2 class="f-16 m-0">Bakery Cakes and Dairy</h2>
+                <p class="f-14 mt-10 mb-20 text-center bold-text">The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread, biscotti, muffins, bagels, fresh coffee, milk and more.</p>
+                <a routerLink="/products" class="custom-btn f-14 w-auto pt-10 pb-10 pl-10 pr-10">Explore bakery-cakes-dairy</a>
+            </div>
+            <img src="../../assets/images/home/bakery.png" class="product-img" alt="bakery" />
+        </div>
+
+        <div class="product-item img-first d-flex">
+            <img src="../../assets/images/home/beverages.png" class="product-img" alt="beverages" />
+            <div class="d-flex align-items-center flex-column justify-content-center flex-grow-1">
+                <h2 class="f-16 m-0">Beverages</h2>
+                <p class="f-14 mt-10 mb-20 text-center bold-text">Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer and more.</p>
+                <a routerLink="/products" class="custom-btn f-14 w-auto pt-10 pb-10 pl-10 pr-10">Explore beverages</a>
+            </div>
+        </div>
+        
+        <div class="product-item img-first d-flex">
+            <div class="d-flex align-items-center flex-column justify-content-center flex-grow-1">
+                <h2 class="f-16 m-0">Beauty and Hygiene</h2>
+                <p class="f-14 mt-10 mb-20 text-center bold-text">Buy beauty and personal care products online in India at best prices.</p>
+                <a routerLink="/products" class="custom-btn f-14 w-auto pt-10 pb-10 pl-10 pr-10">Explore beauty-hygiene</a>
+            </div>
+            <img src="../../assets/images/home/beauty.png" class="product-img" alt="bakery" />
+        </div>
+
+        <div class="product-item img-first d-flex">
+            <img src="../../assets/images/home/baby.png" class="product-img" alt="baby" />
+            <div class="d-flex align-items-center flex-column justify-content-center flex-grow-1">
+                <h2 class="f-16 m-0">Baby Care</h2>
+                <p class="f-14 mt-10 mb-20 text-center bold-text">Shop online for Baby Products, Diapers, Skin Care Products,etc.</p>
+                <a routerLink="/products" class="custom-btn f-14 w-auto pt-10 pb-10 pl-10 pr-10">Explore baby</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- home template ends -->

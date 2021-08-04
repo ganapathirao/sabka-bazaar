@@ -1,0 +1,100 @@
+@import '../../assets/scss/variables';
+// product page styles
+.category-select {
+    border-radius: 5px;
+    outline: none;
+}
+.sidenav-list {
+    background-color: $product-sidenav-bg;
+    flex-basis: 220px;
+    .list-item {
+        border-bottom: 1px solid $border-color;
+        color: $sidenav-text-color;
+        &.active {
+            background-color: $sidenav-active-color;
+        }
+    }
+}
+.products-list {
+    flex: 1;
+    display: grid;
+    grid-gap: 2rem;
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    .product-item {
+        border-bottom: 1px dotted $border-color;
+        .product-name {
+            margin: 1rem 0;
+            text-overflow: ellipsis;
+            margin-top: 0;
+        }
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .product-image {
+            width: 200px;
+            height: 140px;
+            object-fit: contain;
+        }
+        .product-description {
+            margin: 1rem 0;
+            margin: 0;
+            background-color: $product-description-bg;
+            line-height: 19px;
+            height: 85px;
+            padding: 6px;
+            p {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+        .product-price {
+            display: inline-block;
+        }
+        .buy-btn {
+            width: auto;
+            height: 40px;
+            width: 90px;
+        }
+    }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width : 991.98px) {
+    .d-md-none {
+        display: none;
+    }
+    .products-list {
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        .product-item {
+            .product-details {
+                display: flex;
+                flex-direction: row;
+            }
+    
+        }
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width : 767.98px) {
+    .products-list {
+        grid-template-columns: repeat(auto-fill, minmax(252px, 1fr));
+    }
+}
+
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width : 575.98px) {
+    .products-list {
+        .product-item {
+            .product-name {
+                min-height: auto;
+            }
+        }
+    }
+}

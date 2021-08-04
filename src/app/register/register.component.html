@@ -1,0 +1,44 @@
+<!-- Registration page template starts -->
+<section class="register-wrapper mt-40 mb-30">
+    <div class="custom-container mx-auto d-flex">
+        <div class="register-text mr-40">
+            <h2 class="f-25">Signup</h2>
+            <p class="f-16">We do not share your personal details with anyone.</p>
+        </div> 
+        <!-- Registration form template starts -->
+        <form class="register-form flex-grow-1" [formGroup]="registerForm">
+            <div class="form-group position-relative">
+                <input type="text" id="firstName" placeholder="firstName" class="form-control" formControlName="firstName" />
+                <label for="firstName" class="label f-15">First Name</label>
+                <p *ngIf="registerForm.get('firstName')?.errors?.required && registerForm.get('firstName')?.touched" class="text-danger error-text f-12">First name is required</p>
+            </div>
+            <div class="form-group position-relative">
+                <input type="text" id="lastName" placeholder="lastName" class="form-control" formControlName="lastName" />
+                <label for="lastName" class="label f-15">Last Name</label>
+                <p *ngIf="registerForm.get('lastName')?.errors?.required && registerForm.get('lastName')?.touched" class="text-danger error-text f-12">Last name is required</p>
+            </div>
+
+            <div class="form-group position-relative">
+                <input type="text" id="email" placeholder="email" class="form-control" formControlName="email" />
+                <label for="email" class="label f-15">Email</label>
+                <p *ngIf="registerForm.get('email')?.errors?.required && registerForm.get('email')?.touched" class="text-danger error-text f-12">Email is required</p>
+                <p *ngIf="registerForm.get('email')?.errors?.email && registerForm.get('email')?.touched" class="text-danger error-text f-12">Please enter valid email</p>
+            </div>
+
+            <div class="form-group position-relative">
+                <input type="password" id="password" placeholder="password" class="form-control" formControlName="password" />
+                <label for="password" class="label f-15">Password</label>
+                <p *ngIf="registerForm.get('password')?.errors?.required && registerForm.get('password')?.touched" class="text-danger error-text f-12">Password is required</p>
+            </div>
+
+            <div class="form-group position-relative">
+                <input type="password" id="cnfPassword" placeholder="cnfPassword" class="form-control" formControlName="cnfPassword" />
+                <label for="cnfPassword" class="label f-15">Confirm Password</label>
+                <p *ngIf="registerForm.get('cnfPassword')?.errors?.required && registerForm.get('cnfPassword')?.touched" class="text-danger error-text f-12">Confirm password is required</p>
+            </div>
+            <button class="custom-btn pt-10 pb-10 f-16 mt-15" type="button" [disabled]="registerForm.invalid || registerForm.get('password')?.value !== registerForm.get('cnfPassword')?.value" (click)="signup()">Signup</button>
+        </form>
+        <!-- Registration form template ends -->
+    </div>
+</section>
+<!-- Registration page template ends -->

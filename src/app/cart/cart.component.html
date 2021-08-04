@@ -1,0 +1,80 @@
+<!-- cart overlay template starts -->
+<div class="cart-overlay" (click)="hideCart()">
+</div>
+<!-- cart overlay template ends -->
+
+<!-- cart modal template starts -->
+<div class="cart-modal">
+    <div class="cart-header d-flex justify-content-between">
+        <h2 class="text-white">My Cart ({{totalItems}} item)</h2>
+        <button class="close-icon c-pointer text-white border-0 bg-transparent" (click)="hideCart()">
+            <span class="material-icons">
+                close
+            </span>
+        </button>
+    </div>
+    
+    <!-- cart items list template starts -->
+    <div class="cart-body" *ngIf="cartData.length !== 0">
+        <div class="cart-list">
+            <div class="cart-item pl-15 pr-15 pt-15 pb-15 mt-10 mb-10 d-flex" *ngFor="let item of cartData">
+                <img [src]="item.imageURL" [alt]="item.name" />
+                <div class="item-details ml-10 flex-grow-1">
+                    <h2>{{item.name}}</h2>
+                    <div class="d-flex align-items-center">
+                        <button class="add-remove-btn custom-btn w-auto" (click)="removeCartItem(item.id)">
+                            <span class="material-icons f-18">
+                                remove
+                            </span>
+                        </button>
+                        <span class="count ml-15 mr-15 f-20">{{item.count}}</span>
+                        <button class="add-remove-btn custom-btn w-auto" (click)="addCartItem(item.id)">
+                            <span class="material-icons f-18">
+                                add
+                            </span>
+                        </button>
+                        <span class="material-icons f-18 ml-10">
+                            close
+                        </span>
+                        <span class="f-18 ml-10">
+                            Rs.{{item.price}}
+                        </span>
+                    </div>
+
+
+                </div>
+                <p class="f-18 ml-10 total-price">Rs.{{item.count * item.price}}</p>
+            </div>
+            <div class="price-ribbon d-flex align-items-center ml-15 mb-10 mr-15 mt-10 pt-10 pb-10 pl-10">
+                <img src="../../assets/images/price-ribbon.png" alt="price" />
+                <span class="f-15 ml-15">You won't find it cheaper anywhere</span>
+            </div>
+        </div>
+        <div class="cart-items-footer pb-15 pl-15 pt-15 pr-15">
+            <p class="f-15">Promocode can be applied on payment page</p>
+            <button
+                class="cart-btn d-flex f-15 align-items-center justify-content-between pr-20 pl-20 pt-15 pb-15 custom-btn">
+                Proceed to Checkout
+                <span class="cart-price d-flex align-items-center">Rs{{totalCartPrice}}
+                    <span class="material-icons">
+                        chevron_right
+                    </span>
+
+                </span>
+            </button>
+        </div>
+    </div>
+    <!-- cart items list template ends -->
+
+    <!-- empty cart template starts -->
+    <ng-container *ngIf="cartData.length === 0">
+        <div class="empty-cart d-flex align-items-center justify-content-center">
+            <h2 class="m-0">No items in your cart</h2>
+        </div>
+        <div class="cart-footer pb-40 ml-20 mr-20">
+            <button class="empty-cart-btn pt-10 pb-10 custom-btn" (click)="gotoProducts()">Start Shopping</button>
+        </div>
+    </ng-container>
+    <!-- empty cart template ends -->
+</div>
+<!-- cart modal template ends -->

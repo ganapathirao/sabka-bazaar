@@ -1,0 +1,40 @@
+<!-- products page template starts -->
+<div class="custom-container mx-auto">
+    <!-- select box to show in mobile view -->
+    <select class="custom-btn category-select d-xs-block d-none pt-10 mt-30 pb-10" (change)="filterProducts($event?.target)">
+        <option *ngFor="let option of categoriesList" [value]="option.id">{{option.name}}</option>
+    </select>
+    <div class="d-flex">
+        <!-- sidenav template for tablet,desktop view -->
+        <div class="sidenav-list mr-20 d-xs-none">
+            <ul class="list-unstyled">
+                <li class="list-item f-16 pt-13 pb-13 pl-20 c-pointer" [class.active]="activeProductId === category.id"
+                *ngFor="let category of categoriesList" (click)="showProducts(category.id)">
+                    {{category.name}}
+                </li>
+            </ul>
+        </div>
+
+        <!-- products list template -->
+        <div class="products-list mt-30 mb-30">
+            <div class="product-item pb-10 d-flex flex-column" *ngFor="let product of productItems">
+                <h2 class="product-name f-18 mb-10">{{product.name}}</h2>
+                <div class="product-details h-100">
+                    <img [src]="product.imageURL" [alt]="product.name" class="product-image mr-10" />
+                    <div class="d-flex flex-column justify-content-end">
+                        <div class="product-description flex-grow-1">
+                            <p class="f-14 m-0">{{product.description}}</p>
+                        </div>
+                        <button class="custom-btn d-xs-block d-none pt-10 mt-15 pb-10" (click)="buynow(product)">Buy Now @ Rs.{{product.price}}</button>
+                    </div>
+                </div>
+                <div class="d-md-none d-flex align-items-center justify-content-between mt-15">
+                    <p class="product-price f-16 m-0">MRP Rs.{{product.price}}</p>
+                    <button class="custom-btn buy-btn" (click)="buynow(product)">Buy Now</button>
+                </div>
+                <button class="custom-btn d-xs-none d-xl-none pt-10 pb-10 mt-15" (click)="buynow(product)">Buy Now @ Rs.{{product.price}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- products page template ends -->

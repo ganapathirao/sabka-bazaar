@@ -1,0 +1,25 @@
+<!-- login template starts -->
+<section class="login-wrapper mt-40 mb-30">
+    <div class="custom-container mx-auto d-flex">
+        <div class="login-text mr-40">
+            <h2 class="f-25">Login</h2>
+            <p class="f-16">Get access to your Orders, Wishlist and Recommendations</p>
+        </div> 
+        <form class="login-form flex-grow-1" [formGroup]="loginForm">
+            <div class="form-group position-relative">
+                <input type="text" id="email" placeholder="email" class="form-control" formControlName="email" />
+                <label for="email" class="label f-15">Email</label>
+                <p *ngIf="loginForm.get('email')?.errors?.required && loginForm.get('email')?.touched" class="text-danger error-text f-12">Email is required</p>
+                <p *ngIf="loginForm.get('email')?.errors?.email && loginForm.get('email')?.touched" class="text-danger error-text f-12">Please enter valid email</p>
+            </div>
+
+            <div class="form-group position-relative">
+                <input type="password" id="password" placeholder="password" class="form-control" formControlName="password" />
+                <label for="password" class="label f-15">Password</label>
+                <p *ngIf="loginForm.get('password')?.errors?.required && loginForm.get('password')?.touched" class="text-danger error-text f-12">Password is required</p>
+            </div>
+            <button class="custom-btn pt-10 pb-10 f-16 mt-15" type="button" [disabled]="loginForm.invalid" (click)="login()">Login</button>
+        </form>
+    </div>
+</section>
+<!-- login template ends -->

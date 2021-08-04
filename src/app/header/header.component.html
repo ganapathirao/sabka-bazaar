@@ -1,0 +1,41 @@
+<!-- header template starts -->
+<header>
+    <div class="custom-container mx-auto d-flex justify-content-between pr-0">
+        <div class="logo">
+            <a routerLink="/home">
+                <img src="../../assets/images/logo.png" alt="logo" />
+            </a>
+        </div>
+        <div class="header-links d-flex flex-grow-1 d-xs-none">
+            <ul class="list-unstyled">
+                <li class="list-inline-item mr-16">
+                    <a routerLink="/home" class="text-capitalize title-color f-18">home</a>
+                </li>
+                <li class="list-inline-item">
+                    <a routerLink="/products" class="text-capitalize title-color title-color f-18">products</a>
+                </li>
+            </ul>
+        </div>
+        <div class="cart-section d-flex flex-column">
+            <ul class="list-unstyled text-right d-xs-none mb-15">
+                <li class="list-inline-item mr-10">
+                    <a routerLink="/login" class="text-capitalize f-14 text-color bold-text">SignIn</a>
+                </li>
+                <li class="list-inline-item">
+                    <a routerLink="/register" class="text-capitalize f-14 text-color bold-text">register</a>
+                </li>
+            </ul>
+            <div class="flex-grow-1 d-flex justify-content-center f-16 align-items-center cart-items bold-text c-pointer" (click)="showCart = true">
+                <img src="../../assets/images/cart-img.svg" class="cart-img mr-5" alt="cart" />
+                {{totalCartItems}} {{totalCartItems !== 1 ? 'items' : 'item'}}
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header template ends -->
+
+<!-- loading cart component dynamically -->
+<ng-container *ngIf="showCart">
+    <app-cart [cartData]="cartData" [totalItems]="totalCartItems" (closeCart)="showCart = false"
+    (removeItem)="removeItem($event)" (addItem)="addItem($event)"></app-cart>
+</ng-container>

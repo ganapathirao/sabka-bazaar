@@ -1,0 +1,99 @@
+@import '../../assets/scss/variables';
+// cart overlay styles
+.cart-overlay {
+    position: fixed;
+    background-color: $modal-overlay-bg;
+    inset: 0 0 0 0;
+    z-index: 999;
+}
+
+// cart modal styles
+.cart-modal {
+    z-index: 999;
+    max-width: 500px;
+    position: absolute;
+    background-color: $cart-bg;
+    right: 15VW;
+    bottom: 0;
+    width: 100%;
+    .cart-header {
+        background: $cart-header-bg;
+        padding: 5px 10px;
+    }
+    .empty-cart {
+        height: 70vh;
+    }
+    .cart-footer {
+        .empty-cart-btn {
+            display: block;
+            font-size: 13px;
+            text-align: center;
+        }
+    }
+    .cart-body {
+        background-color: $cart-body-bg;
+        .price-ribbon {
+            background-color: $white-bg;
+            border-radius: 5px;
+            img {
+                max-width: 100px;
+            }
+        }
+        .cart-list {
+            height: 70vh;
+            overflow: auto;
+            .cart-item {
+                background-color: $white-bg;
+                .add-remove-btn {
+                    border-radius: 50%;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 20px !important;
+                    height: 20px;
+                }
+                img {
+                    max-width: 70px;
+                    object-fit: contain;
+                }
+                .item-details {
+                    display: inline-block;
+                    vertical-align: top;
+                    h2 {
+                        margin-bottom: 2px;
+                        margin-top: 5px;
+                    }
+                }
+                .total-price {
+                    margin: 0;
+                    align-self: center;
+                }
+            }
+        }
+        .cart-items-footer {
+            background-color: $white-bg;
+            border-top: 2px solid $border-color;
+            p {
+                text-align: center;
+                margin-top: 0;
+            }
+            .cart-btn {
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width : 767.98px) {
+    .cart-modal {
+        inset: 0 0 0 0;
+        max-width: unset;
+        .cart-body {
+            height: 100%;
+            .cart-list {
+                height: calc(100% - 175px);
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<!-- Carousel Template Starts -->
+<div class="carousel-container position-relative">
+    <div class="carousel-slide" *ngFor="let slide of images; let i = index" [class.active]="i === 0">
+        <img [src]="slide.path" [alt]="slide.name" />
+    </div>
+    <div class="carousel-controls">
+        <button class="prev position-absolute control border-0 c-pointer" (click)="prev()">PREV</button>
+        <button class="next position-absolute control border-0 c-pointer" (click)="next()">NEXT</button>
+    </div>
+    <div class="carousel-dots position-relative d-flex justify-content-center">
+        <div *ngFor="let slide of images; let i = index" class="c-pointer" (click)="gotoSlide(i)" [class.current-slide]="i === activeSlide">
+        </div>
+    </div>
+</div>
+<!-- Carousel Template Ends -->
