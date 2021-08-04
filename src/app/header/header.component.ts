@@ -63,7 +63,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
           this.totalCartItems--;
         } else {
           this.toastr.success(element.name+' Removed From Cart','',{
-            messageClass : 'f-20'
+            messageClass : 'f-16'
           });
           this.cartData.splice(index,1);
           this.totalCartItems--;

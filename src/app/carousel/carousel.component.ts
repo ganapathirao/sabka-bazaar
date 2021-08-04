@@ -2,6 +2,7 @@ import {
   AfterViewInit, 
   Component, 
   Input, 
+  OnDestroy, 
   OnInit 
 } from '@angular/core';
 
@@ -10,7 +11,7 @@ import {
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit, AfterViewInit {
+export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   // public variables
   @Input() images: any;
   public activeSlide = 0;
@@ -66,6 +67,12 @@ export class CarouselComponent implements OnInit, AfterViewInit {
     this.activeSlide = index;
     this.slidesList[this.activeSlide].classList.add('active');
     this.slideChange();
+  }
+
+  ngOnDestroy() {
+    if(this.autoSlideChange) {
+      clearInterval(this.autoSlideChange);
+    }
   }
 
 }

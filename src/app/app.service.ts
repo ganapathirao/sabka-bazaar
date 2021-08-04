@@ -17,7 +17,7 @@ export class AppService {
 
     // function to get products list
     getProductsList(): Observable<any> {
-        return this.httpClient.get('../assets/server/products.json');
+        return this.httpClient.get('assets/server/products.json');
     }
 
 }
