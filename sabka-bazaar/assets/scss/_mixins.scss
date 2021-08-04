@@ -1,0 +1,36 @@
+// Generating font classes dynamically from 1px-40px
+@for $i from 1 through 40 {
+    .f-#{$i} {
+        font-size: ($i * .1rem) !important;
+    }
+}
+
+// Generating margin,padding classes dynamically 
+@for $i from 1 through 40 {
+    .mr-#{$i} {
+        margin-right: ($i * .1rem) !important;
+    }
+    .mt-#{$i} {
+        margin-top: ($i * .1rem) !important;
+    }
+    .ml-#{$i} {
+        margin-left: ($i * .1rem) !important;
+    }
+    .mb-#{$i} {
+        margin-bottom: ($i * .1rem) !important;
+    }
+
+    .pr-#{$i} {
+        padding-right: ($i * .1rem) !important;
+    }
+    .pt-#{$i} {
+        padding-top: ($i * .1rem) !important;
+    }
+    .pl-#{$i} {
+        padding-left: ($i * .1rem) !important;
+    }
+    .pb-#{$i} {
+        padding-bottom: ($i * .1rem) !important;
+    }
+}
+  
