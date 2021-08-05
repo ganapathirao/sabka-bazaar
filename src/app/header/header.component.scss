@@ -21,6 +21,7 @@ header {
         flex-basis: 130px;
         .cart-items {
             background-color: $header-cart-bg;
+            border: 0;
         }
         .cart-img {
             max-width: 30px;

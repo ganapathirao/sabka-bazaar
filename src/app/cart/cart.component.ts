@@ -53,12 +53,12 @@ export class CartComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   // Function to emit event to remove item from the cart
-  removeCartItem(event: Event): void {
+  removeCartItem(event: any): void {
     this.removeItem.emit(event);
   }
 
   // Function to emit event to add item into the cart
-  addCartItem(event: Event): void {
+  addCartItem(event: any): void {
     this.addItem.emit(event);
   }
   

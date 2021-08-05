@@ -22,13 +22,13 @@
                 <div class="item-details ml-10 flex-grow-1">
                     <h2>{{item.name}}</h2>
                     <div class="d-flex align-items-center">
-                        <button class="add-remove-btn custom-btn w-auto" (click)="removeCartItem(item.id)">
+                        <button class="add-remove-btn custom-btn w-auto" id="removeBtn" (click)="removeCartItem(item.id)">
                             <span class="material-icons f-18">
                                 remove
                             </span>
                         </button>
                         <span class="count ml-15 mr-15 f-20">{{item.count}}</span>
-                        <button class="add-remove-btn custom-btn w-auto" (click)="addCartItem(item.id)">
+                        <button class="add-remove-btn custom-btn w-auto" id="addBtn" (click)="addCartItem(item.id)">
                             <span class="material-icons f-18">
                                 add
                             </span>

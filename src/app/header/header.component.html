@@ -25,10 +25,11 @@
                     <a routerLink="/register" routerLinkActive="active" class="text-capitalize f-14 text-color bold-text">register</a>
                 </li>
             </ul>
-            <div class="flex-grow-1 d-flex justify-content-center f-16 align-items-center cart-items bold-text c-pointer" (click)="showCart = true">
+            <button class="flex-grow-1 d-flex justify-content-center f-16 align-items-center cart-items bold-text c-pointer"
+            id="cartBtn" (click)="showCart = true">
                 <img src="assets/images/cart-img.svg" class="cart-img mr-5" alt="cart" />
                 {{totalCartItems}} {{totalCartItems !== 1 ? 'items' : 'item'}}
-            </div>
+            </button>
         </div>
     </div>
 </header>
