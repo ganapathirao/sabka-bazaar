@@ -3,6 +3,10 @@
 
 <router-outlet></router-outlet>
 
+<div class="app-loader" *ngIf="isShowLoader">
+  <div class="loader"></div>
+</div>
+
 <!-- footer template -->
 <footer>
   <p class="custom-container f-16 mx-auto pt-15 pb-15">

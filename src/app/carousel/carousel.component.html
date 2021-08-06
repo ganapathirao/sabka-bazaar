@@ -1,7 +1,7 @@
 <!-- Carousel Template Starts -->
 <div class="carousel-container position-relative">
     <div class="carousel-slide" *ngFor="let slide of images; let i = index" [class.active]="i === 0">
-        <img [src]="slide.path" [alt]="slide.name" />
+        <img [src]="slide.bannerImageUrl" [alt]="slide.bannerImageAlt" />
     </div>
     <div class="carousel-controls">
         <button class="prev position-absolute control border-0 c-pointer" (click)="prev()">PREV</button>

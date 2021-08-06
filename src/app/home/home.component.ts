@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-home',
@@ -7,17 +8,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   // public variables
-  public imagesList = [
-    {path: 'assets/images/home/carousel-images/offer1.jpg', name : 'offer1'},
-    {path: 'assets/images/home/carousel-images/offer2.jpg', name : 'offer2'},
-    {path: 'assets/images/home/carousel-images/offer3.jpg', name : 'offer3'},
-    {path: 'assets/images/home/carousel-images/offer4.jpg', name : 'offer4'},
-    {path: 'assets/images/home/carousel-images/offer5.jpg', name : 'offer5'},
-  ]
+  public imagesList = [];
+  public categoriesList:any = [];
 
-  constructor() { }
+  constructor(
+    private appService: AppService
+  ) { }
 
   ngOnInit(): void {
+    // getting banners list
+    this.appService.getBannersList().subscribe((response) => {
+      if(response?.length) {
+        this.imagesList = response;
+      }
+    },
+    (error) => {
+      console.log(error);
+    })
+
+    // getting categories list
+    this.appService.getCategoriesList().subscribe((categories) => {
+      if(categories?.length) {
+        this.categoriesList = categories.filter((item: any) => item.enabled)
+        .sort((first: any,second: any) => first.order - second.order);
+      }
+    },
+    (error) => {
+      console.log(error);
+    })
+
   }
 
 }
