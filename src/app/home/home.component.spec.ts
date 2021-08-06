@@ -1,6 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { 
   ComponentFixture, 
-  TestBed 
+  TestBed, 
+  waitForAsync
 } from '@angular/core/testing';
 
 import { CarouselComponent } from '../carousel/carousel.component';
@@ -15,6 +17,9 @@ describe('HomeComponent', () => {
       declarations: [ 
         HomeComponent,
         CarouselComponent
+      ],
+      imports :[
+        HttpClientModule
       ]
     })
     .compileComponents();
@@ -29,4 +34,13 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('should get banners', waitForAsync(() => {
+  //   component.ngOnInit();
+  //   fixture.detectChanges();
+  //   fixture.whenStable().then(() => {
+  //     expect(component.imagesList).not.toEqual([]);
+  //   })
+  // }))
+
 });

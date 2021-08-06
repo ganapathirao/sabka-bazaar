@@ -7,6 +7,7 @@ import {
 import { AppService } from '../app.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from "@angular/router/testing";
 
 import { HeaderComponent } from '../header/header.component';
 import { ProductsComponent } from './products.component';
@@ -20,8 +21,12 @@ describe('ProductsComponent', () => {
   
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductsComponent, HeaderComponent ],
+      declarations: [ 
+        ProductsComponent, 
+        HeaderComponent 
+      ],
       imports : [
+        RouterTestingModule,
         BrowserAnimationsModule,
         HttpClientModule,
         ToastrModule.forRoot()
@@ -48,9 +53,8 @@ describe('ProductsComponent', () => {
 
   it('should get products', waitForAsync(() => {
       component.ngOnInit();
-      fixture.detectChanges();;
+      fixture.detectChanges();
       fixture.whenStable().then(() => {
-        expect(component.activeProductId).not.toBe('');
         expect(component.productItems).not.toEqual([]);
       })
   }))

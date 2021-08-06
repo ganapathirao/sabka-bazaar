@@ -32,9 +32,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
       if (id) {
         this.showProducts(id);
       }
-    })
-    // this.getProducts();
-    // this.getCategories();
+    });
   }
 
   getProducts() {
@@ -43,10 +41,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
       this.productsSubscription = this.appService.getProductsList().subscribe((response: any) => {
         if (response?.length) {
           this.productsData = response;
-          // response.forEach((element: any) => {
-          //   this.categoriesList.push({name: element.name, id: element.id});
-          // });
-          // this.activeProductId = response[0]['id'];
           this.productItems = response;
           resolve('');
         }
@@ -65,11 +59,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
         if (response?.length) {
           this.categoriesList = response.filter((item: any) => item.enabled)
             .sort((a: any, b: any) => a.order - b.order);
-
-          // this.categories = this.categories.map((category) => {
-          //   category.isActive = false;
-          //   return category;
-          // })
           resolve('');
         }
       },
@@ -87,12 +76,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
 
   // function to change products category from sidenav
   showProducts(productId: any | EventTarget): void {
-    // this.productsData.forEach((element: any) => {
-    //     if(id === element.id) {
-    //       this.activeProductId = element.id;
-    //       this.productItems = element.items;
-    //     }
-    // });
     this.activeProductId = productId;
     const id = this.categoriesList.findIndex((obj: any) => obj.id === productId);
     if (this.categoriesList[id] && !this.categoriesList[id].isActive) {
@@ -100,14 +83,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
     } else {
       this.productItems = this.productsData;
     }
-
-    // this.categories.forEach((category, index) => {
-    //   if (index === id) {
-    //     category.isActive = !category.isActive;
-    //   } else {
-    //     category.isActive = false;
-    //   }
-    // })
   }
 
   // function to add item to cart
