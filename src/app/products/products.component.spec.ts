@@ -1,9 +1,14 @@
 import { HttpClientModule } from '@angular/common/http';
-import { ComponentFixture, inject, TestBed, waitForAsync } from '@angular/core/testing';
+import { 
+  ComponentFixture, 
+  TestBed, 
+  waitForAsync 
+} from '@angular/core/testing';
 import { AppService } from '../app.service';
-import { HeaderComponent } from '../header/header.component';
 import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { HeaderComponent } from '../header/header.component';
 import { ProductsComponent } from './products.component';
 
 describe('ProductsComponent', () => {
@@ -12,15 +17,15 @@ describe('ProductsComponent', () => {
   let fixture: ComponentFixture<ProductsComponent>;
   let headerFixture: ComponentFixture<HeaderComponent>;
   let appService: AppService;
-  let mockSomeService = {
-    getData: () => {}
-  }
-
   
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductsComponent,HeaderComponent ],
-      imports : [HttpClientModule,ToastrModule.forRoot()],
+      declarations: [ ProductsComponent, HeaderComponent ],
+      imports : [
+        BrowserAnimationsModule,
+        HttpClientModule,
+        ToastrModule.forRoot()
+      ],
       providers :[
         AppService
       ]
@@ -33,21 +38,45 @@ describe('ProductsComponent', () => {
     headerFixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     headerComponent = headerFixture.componentInstance;
-    fixture.detectChanges();
     appService = TestBed.inject(AppService);
+    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should add item to cart', waitForAsync(inject([AppService],(appService: AppService) => {
-  //   // headerComponent.totalCartItems = 0;
-  //   spyOn(mockSomeService, 'getData').and.returnValue();
-  //   // spyOn(appService,'getProductsList');
-  //   // component.ngOnInit();
-  //   // fixture.detectChanges();
-  //   expect(mockSomeService.getData).toHaveBeenCalled();
-  // })))
+  it('should get products', waitForAsync(() => {
+      component.ngOnInit();
+      fixture.detectChanges();;
+      fixture.whenStable().then(() => {
+        expect(component.activeProductId).not.toBe('');
+        expect(component.productItems).not.toEqual([]);
+      })
+  }))
+
+  it('should change products',waitForAsync(() => {
+    component.ngOnInit();
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      component.showProducts('5b6899683d1a866534f516e0');
+      fixture.detectChanges();
+      expect(component.activeProductId).toBe('5b6899683d1a866534f516e0');
+    })
+  }))
+
+  it('should add item to cart', waitForAsync(() => {
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(headerComponent.totalCartItems).toBe(0);
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      let buyBtn = fixture.nativeElement.querySelectorAll('.buy-btn')[0];
+      buyBtn.click();
+      fixture.detectChanges();
+      headerFixture.detectChanges();
+      expect(headerComponent.totalCartItems).toBe(1);
+    })
+  }))
 
 });
