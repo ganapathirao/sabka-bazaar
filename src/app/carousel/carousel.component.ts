@@ -23,8 +23,10 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.slideChange();
     this.slidesList = document.getElementsByClassName('carousel-slide');
+    if(this.slidesList && this.slidesList.length){
+      this.slideChange();
+    }
   }
 
   // Function to change slide after 5s

@@ -10,11 +10,11 @@ describe('CarouselComponent', () => {
   let fixture: ComponentFixture<CarouselComponent>;
   let images: any;
   let imagesList = [
-    {path: 'assets/images/home/carousel-images/offer1.jpg', name : 'offer1'},
-    {path: 'assets/images/home/carousel-images/offer2.jpg', name : 'offer2'},
-    {path: 'assets/images/home/carousel-images/offer3.jpg', name : 'offer3'},
-    {path: 'assets/images/home/carousel-images/offer4.jpg', name : 'offer4'},
-    {path: 'assets/images/home/carousel-images/offer5.jpg', name : 'offer5'},
+    {bannerImageUrl: 'assets/images/home/carousel-images/offer1.jpg', bannerImageAlt : 'offer1'},
+    {bannerImageUrl: 'assets/images/home/carousel-images/offer2.jpg', bannerImageAlt : 'offer2'},
+    {bannerImageUrl: 'assets/images/home/carousel-images/offer3.jpg', bannerImageAlt : 'offer3'},
+    {bannerImageUrl: 'assets/images/home/carousel-images/offer4.jpg', bannerImageAlt : 'offer4'},
+    {bannerImageUrl: 'assets/images/home/carousel-images/offer5.jpg', bannerImageAlt : 'offer5'},
   ]
 
   beforeEach(async () => {
