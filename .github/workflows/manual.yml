@@ -21,7 +21,7 @@ jobs:
           node-version: '12.x'
         
       - name : setting details
-      - run: |
+      - run:
           git config --global user.email "thotaganapathi.rao@publicissapient.com"
           git config --global user.name "Ganapathi Rao"
 
