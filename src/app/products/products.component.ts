@@ -25,7 +25,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private appService: AppService
   ) { }
-  
 
   ngOnInit(): void {
     Promise.all([this.getProducts(), this.getCategories()]).then(() => {
