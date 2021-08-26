@@ -27,5 +27,5 @@ jobs:
         run: npm run build "https://ganapathirao.github.io/sabka-bazaar/"
         
       - name: deploying
-        run: ngh --dir dist/sabka-bazaar
+        run: npm run deploy
         
