@@ -19,11 +19,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-        
-      - name : setting details
-      - run:
-          git config --global user.email "thotaganapathi.rao@publicissapient.com"
-          git config --global user.name "Ganapathi Rao"
+
+      - name: Who am I (temp-set)
+        run: |
+          system('git config --global user.email "thotaganapathi.rao@publicissapient.com")
+          system('git config --global user.name "Ganapathi Rao")
 
       - name: install dependencies
         run: npm install
