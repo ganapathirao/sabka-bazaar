@@ -22,8 +22,8 @@ jobs:
 
       - name: Who am I (temp-set)
         run: |
-          system('git config --global user.email "thotaganapathi.rao@publicissapient.com")
-          system('git config --global user.name "Ganapathi Rao")
+          git config --global user.email "thotaganapathi.rao@publicissapient.com"
+          git config --global user.name "Ganapathi Rao"
 
       - name: install dependencies
         run: npm install
