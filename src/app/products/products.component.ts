@@ -26,8 +26,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
     private appService: AppService
   ) { }
 
-  
-
   ngOnInit(): void {
     Promise.all([this.getProducts(), this.getCategories()]).then(() => {
       const id = this.activatedRoute.snapshot.queryParamMap.get('id') || '';
