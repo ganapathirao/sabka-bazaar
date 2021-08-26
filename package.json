@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href 'https://ganapathirao.github.io/sabka-bazaar/' && angular-cli-ghpages --repo=https://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@github.com/organization/sabka-bazaar.git  --name='ganapathirao' --email=ganeshthota418@gmail.com && angular-cli-ghpages --branch gh-pages",
+    "build": "ng build --prod --base-href 'https://ganapathirao.github.io/sabka-bazaar/' && ngh --no-silent --dir dist/sabka-bazaar",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "ngh --dir=dist/sabka-bazaar"
