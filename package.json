@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build --prod --base-href",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy" : "ngh --dir dist/sabka-bazaar"
   },
   "private": true,
   "dependencies": {
