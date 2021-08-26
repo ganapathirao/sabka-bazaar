@@ -26,6 +26,3 @@ jobs:
       - name: create dist folder
         run: npm run build
         
-      - name: deploying
-        run: npm run deploy
-        
