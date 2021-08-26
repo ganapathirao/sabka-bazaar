@@ -7,7 +7,7 @@
     "build": "ng build --prod --base-href",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy" : "ngh --dir dist/sabka-bazaar"
+    "deploy": "ngh --dir dist/sabka-bazaar"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~12.1.2",
     "@angular/platform-browser-dynamic": "~12.1.2",
     "@angular/router": "~12.1.2",
+    "angular-cli-ghpages": "^1.0.0-rc.2",
     "material-design-icons": "^3.0.1",
     "ngx-toastr": "^14.0.0",
     "rxjs": "~6.6.0",
