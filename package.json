@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href 'https://ganapathirao.github.io/sabka-bazaar/' && ngh --no-silent --dir dist/sabka-bazaar",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ngh --dir=dist/sabka-bazaar"
+    "deploy": "ngh --dir dist/sabka-bazaar"
   },
   "private": true,
   "dependencies": {
