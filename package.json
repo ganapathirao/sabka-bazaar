@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --base-href",
+    "build": "ng build --prod --base-href 'https://ganapathirao.github.io/sabka-bazaar/' && angular-cli-ghpages --branch gh-pages",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "ngh --dir dist/sabka-bazaar"
