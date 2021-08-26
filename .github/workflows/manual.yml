@@ -1,0 +1,23 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    name: Build & Test
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: create dist folder
+        run: ng build --prod --base-href "https://ganapathirao.github.io/sabka-bazaar/"
+        
+      - name: deploying
+        run: ngh --dir dist/sabka-bazaar
+        
